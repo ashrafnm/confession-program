@@ -1,0 +1,159 @@
+//PLEASE COPY THIS SOURCE CODE AND PASTE INTO C++ COMPILER
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int main(void){
+    
+    int pswd;
+    int i;
+    string name;
+    string answer;
+    string now;
+    string now2 = "NOW ";
+    double x, y, size=10;
+    string message(" Partner's name ");
+    int print_line = 4;
+    if (message.length() % 2 != 0) message += " ";
+    int ctr = 3;
+
+    while(ctr > 0){
+        
+        cout << "Please insert password (Numbers only): ";
+        cin >> pswd;
+        
+        
+        if(pswd == 123){
+            cout << "Please insert your name: ";
+            cin >> name;
+            cout << "\nHi " << name << "\n";
+            cout << "Please answer yes or no in the followings: \n";
+                
+            for(i = 0; i <= 3; i++){
+                cout << "" << now << "Do you love me?\n";
+                cin >> answer;
+                if(answer == "yes" || answer == "Yes" ){
+                        cout << "\nI Love You Too.\n";
+                        cout << "I Love You because YOU ARE BEAUTIFUL AND I WANNA KNOW MORE ABOUT YOU\n";
+                         cout << "I Love You because YOUR IMPERFECTNESS IS ALSO YOUR BEAUTY\n";
+                         cout << "I Love You because YOU ARE THE ONLY ONE THAT MAKES ME WANNA FALL IN LOVE\n";
+                    break;
+                }
+                else {
+                    if(i == 0){
+                        cout << "\nI Love You because YOU ARE BEAUTIFUL AND I WANNA KNOW MORE ABOUT YOU\n";
+                        now = now2;
+                    }
+                    else if(i == 1){
+                        cout << "\nI Love You because YOUR IMPERFECTNESS IS ALSO YOUR BEAUTY\n";
+                    }
+                    else if(i == 2){
+                        cout << "\nI Love You because YOU ARE THE ONLY ONE THAT MAKES ME WANNA FALL IN LOVE\n";
+                    }
+                    else{
+                        cout << "\nI'll make you mad love with me one day. See ya later\n";
+                        return 0;
+                    }
+                }
+                
+            }
+                
+            cout << "Can you promise me 3 things?\n";
+            cin >> answer;
+            
+            if(answer == "yes" || answer == "Yes" ){
+                cout << "PROMISE 1:" << name << ", promise to always LOVE YOURSELF?\n";
+                cin >> answer;
+                if(answer == "yes" || answer == "Yes" ){
+                    cout << "PROMISE 2:" << name << ", promise to fight for our relationship until you can't?\n";
+                    cin >> answer;
+                    
+                    if(answer == "yes" || answer == "Yes" ){
+                        cout << "PROMISE 3:" << name << ", promise to LOVE me even when you HATE me?\n";
+                        cin >> answer;
+                        
+                        if(answer == "yes" || answer == "Yes" ){
+                            cout << "Thank you for your promises.\n\n";
+                            cout << "Now for the last question.\nWould you like to be my significant other (girlfriend)?\n";
+                            cin >> answer;
+                            
+                            if(answer == "yes" || answer == "Yes" ){
+                                cout << "\nThank you for accepting me in your life.\nYou are in my heart now.\n";
+                                cout << "Look Down\n\n";
+                                for (x=0;x<size;x++) 
+                                {
+                                    for (y=0;y<=4*size;y++)   
+                                    {
+                                        double dist1 = sqrt( pow(x-size,2) + pow(y-size,2) );
+                                        double dist2 = sqrt( pow(x-size,2) + pow(y-3*size,2) );
+                            
+                                        if (dist1 < size + 0.5 || dist2 < size + 0.5 ) {
+                                            cout << "V";
+                                        }
+                                        else cout << " ";
+                                    }
+                                    cout<<"\n";
+                                }
+                            
+                                for (x=1;x<2*size;x++)
+                                {
+                                    for(y=0;y<x;y++) cout << " ";
+                            
+                                    for (y=0; y<4*size + 1 - 2*x; y++) 
+                                    {            
+                                        if (x >= print_line - 1 && x <= print_line + 1) {
+                                            int idx = y - (4*size - 2*x - message.length()) / 2;
+                                            if (idx < message.length() && idx >= 0) {
+                                                if (x == print_line) cout<<message[idx];
+                                                else cout << " ";
+                                            }
+                                            else cout << "V";
+                                        }
+                                        else cout << "V";
+                                    }
+                                    cout<<endl;
+                                    
+                                }
+                                return 0;
+                            }
+                            else{
+                                cout << "I'm sorry you have to wait a bit longer.";
+                                break;
+                            }
+                        }
+                        else{
+                        cout << "I'm sorry you have to wait a bit longer.";
+                        break;
+                        }
+                    }
+                    else{
+                    cout << "I'm sorry you have to wait a bit longer.";
+                    break;
+                    }
+                }
+                else{
+                cout << "I'm sorry you have to wait a bit longer.";
+                break;
+                }
+                
+            }
+            else{
+                cout << "I'm sorry you have to wait a bit longer.";
+                break;
+            }
+        }
+        else{
+            cout << "Please insert the correct password.\n";
+            ctr--;
+            cout << "Trial left: " << ctr << "\n";
+        }
+    }
+    
+    cout << "\nPlease restart program!";
+    
+    
+    
+    return 0;
+}
